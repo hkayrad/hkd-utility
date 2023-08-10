@@ -1,4 +1,120 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+html {
+  --bg: #fff;
+  --fg: #000;
+  --tabBg: rgba(249, 249, 249, 0.94);
+  --gray: #999;
+  --blue: #007aff;
+  color-scheme: light;
+}
+
+html[data-theme=dark] {
+  --bg: #000;
+  --fg: #fff;
+  --tabBg: rgba(22, 22, 22, 0.94);
+  --gray: #757575;
+  --blue: #0a84ff;
+  color-scheme: dark;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: #000;
-  color: #fff;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "SF Pro Display";
+}
+body nav.tabBar {
+  width: 100%;
+  height: 84px;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--tabBg);
+}
+body nav.tabBar .tabs {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+body nav.tabBar .tabs a {
+  width: 100%;
+  height: 50px;
+  color: var(--gray);
+  text-decoration: none;
+  text-align: center;
+  padding-top: 8px;
+}
+body nav.tabBar .tabs a svg.tabIcon path {
+  fill: var(--gray);
+}
+body nav.tabBar .tabs a.active {
+  color: var(--blue);
+}
+body nav.tabBar .tabs a.active svg.tabIcon path {
+  fill: var(--blue);
+}
+body nav.tabBar .tabs a svg.tabIcon {
+  width: 24px;
+  height: 24px;
+}
+body .pages {
+  padding: 36px 20px 0 20px;
+}
+body .pages header {
+  width: 100%;
+  padding-bottom: 10px;
+}
+body .pages header h1.title {
+  font-size: 34px;
+  font-weight: 700;
+}
+body .homePage .utilityBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body .homePage .utilityBtns a.utilityBtn {
+  width: 158px;
+  height: 158px;
+  background-color: var(--fg);
+  border-radius: 22px;
+}
+body .homePage .utilityBtns a.utilityBtn.l {
+  margin: 0 auto 0 0;
+}
+body .homePage .utilityBtns a.utilityBtn.r {
+  margin: 0 0 0 auto;
+}
+body .settingsPage .settingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body .settingsPage .settingsGrid .themeSwitcher label.themeSwitchBtn {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--blue);
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+}
+body .settingsPage .settingsGrid .themeSwitcher label.themeSwitchBtn svg.btnImg {
+  width: 20px;
+  height: 20px;
+}
+body .settingsPage .settingsGrid .themeSwitcher label.themeSwitchBtn svg.btnImg path {
+  fill: white;
+}
+body .settingsPage .settingsGrid .themeSwitcher label.themeSwitchBtn p.btnLabel {
+  font-size: 17px;
+  margin-left: 10px;
+  color: white;
+}
+body .settingsPage .settingsGrid .themeSwitcher input.themeSwitch {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

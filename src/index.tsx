@@ -8,12 +8,24 @@ import {
 } from "react-router-dom";
 
 //* Routes
-import Home from './routes/Home';
+import Main from './routes/Main';
+import Home from './routes/main/Home';
+import Settings from './routes/main/Settings';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Main/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>
+      },
+      {
+        path: "/settings",
+        element: <Settings/>
+      }
+    ]
   },
 ]);
 

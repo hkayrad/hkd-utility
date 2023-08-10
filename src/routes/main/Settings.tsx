@@ -52,7 +52,7 @@ export default function Settings() {
 							);
 							manifests.forEach((link) => {
 								// @ts-ignore
-								link.content = theme ? "#000" : "#fff";
+								link.content = theme ? "#000" : "#f2f2f7";
 							});
 						}}
 					/>

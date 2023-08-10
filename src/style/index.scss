@@ -3,30 +3,22 @@
 
 //* Variables
 html {
-	$bg: #fff;
-	$fg: #000;
-	$tabBg: rgba(#f9f9f9, 0.94);
-	$gray: #999;
-	$blue: #007aff;
-	--bg: #{$bg};
-	--fg: #{$fg};
-	--tabBg: #{$tabBg};
-	--gray: #{$gray};
-	--blue: #{$blue};
+	--bg: #f2f2f7;
+	--fg: #000;
+	--tabBg: rgba(249, 249, 249, 0.94);
+	--gray: #999;
+	--blue: #007aff;
+    --elevated-bg: #fff;
 	color-scheme: light;
 }
 
 html[data-theme="dark"] {
-	$bg: #000;
-	$fg: #fff;
-	$tabBg: rgba(22, 22, 22, 0.94);
-	$gray: #757575;
-	$blue: #0a84ff;
-	--bg: #{$bg};
-	--fg: #{$fg};
-	--tabBg: #{$tabBg};
-	--gray: #{$gray};
-	--blue: #{$blue};
+	--bg: #000;
+	--fg: #fff;
+	--tabBg: rgba(33, 33, 33, 0.94);
+	--gray: #757575;
+	--blue: #0a84ff;
+	--elevated-bg: #1c1c1e;
 	color-scheme: dark;
 }
 
@@ -44,9 +36,10 @@ body {
 	nav.tabBar {
 		width: 100%;
 		height: 84px;
-		position: absolute;
+		position: fixed;
 		bottom: 0;
-		background-color: var(--tabBg);
+		background: var(--tabBg);
+		border-top: rgba(60, 60, 67, 0.36) 1px solid;
 
 		.tabs {
 			position: relative;
@@ -99,31 +92,37 @@ body {
 		}
 	}
 
-    .homePage {
-        .utilityBtns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+	.homePage {
+		.utilityBtns {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 
-            a.utilityBtn {
-                &.l {
-                    margin: 0 auto 0 0;
-                }
+			a.utilityBtn {
+				&.l {
+					margin: 0 auto 0 0;
+				}
 
-                &.r {
-                    margin: 0 0 0 auto;
+				&.r {
+					margin: 0 0 0 auto;
+				}
+				width: 158px;
+				height: 158px;
+				background-color: var(--fg);
+				border-radius: 22px;
+
+                &.post {
+                    background: url('https://logowik.com/content/uploads/images/postman-api-platform6643.logowik.com.webp');
+                    background-size: cover;
+                    background-position: -27px 0;
                 }
-                width: 158px;
-                height: 158px;
-                background-color: var(--fg);
-                border-radius: 22px;
-            }
-        }
-    }
+			}
+		}
+	}
 
 	.settingsPage {
 		.settingsGrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 
 			.themeSwitcher {
 				label.themeSwitchBtn {
@@ -155,6 +154,54 @@ body {
 					display: none;
 				}
 			}
+		}
+	}
+
+	.sendPostPage {
+		.inputWrapper {
+			background-color: var(--elevated-bg);
+			padding: 1px 16px 16px 16px;
+			border-radius: 22px;
+			margin-bottom: 24px;
+
+			h2.subTitle {
+				font-size: 28px;
+				font-weight: bold;
+				width: 100%;
+				margin: 16px 0;
+                color: var(--fg);
+			}
+
+			.inputs {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+                background: var(--elevated-bg);
+
+				input[type="number"] {
+					padding: 11px 0;
+					font-size: 16px;
+					width: 30%;
+					margin: 0;
+					border: none;
+                    background: var(--elevated-bg);
+					border-bottom: 0.5px rgba(0, 0, 0, 0.3) solid;
+					border-radius: 0px;
+					color: var(--fg);
+				}
+			}
+		}
+
+		button.submitBtn {
+			width: 100%;
+			background: var(--blue);
+            color: white;
+			padding: 14px 20px;
+			justify-content: center;
+			align-items: center;
+			border-radius: 14px;
+            font-size: 17px;
 		}
 	}
 }

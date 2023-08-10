@@ -11,6 +11,7 @@ import {
 import Main from './routes/Main';
 import Home from './routes/main/Home';
 import Settings from './routes/main/Settings';
+import SendPost from './routes/utility/SendPost';
 
 const router = createBrowserRouter([
   {
@@ -24,9 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/settings",
         element: <Settings/>
+      },
+      {
+        path: "/utility/sendPost",
+        element: <SendPost/>
       }
     ]
   },
+
 ]);
 
 const root = ReactDOM.createRoot(

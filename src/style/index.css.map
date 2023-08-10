@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss","index.css"],"names":[],"mappings":"AAGA;EACI,gBAJC;EAKD,WAJC;ACEL","file":"index.css","sourcesContent":["$bg: #000;\r\n$fg: #fff;\r\n\r\nbody {\r\n    background: $bg;\r\n    color: $fg;\r\n}","body {\n  background: #000;\n  color: #fff;\n}"]}
